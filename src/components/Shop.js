@@ -1,15 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ItemCard from './ItemCard';
+import fast from '../images/shoes/NB5740.webp';
+import { info } from '../shoesInfo';
 
 export function Shop() {
     return (
         <div>
             <h1>Hello from shop</h1>
-            <Link to="item1">Item 1</Link>
-            <br />
-            <Link to="item2">Item 2</Link>
-            <br />
-            <Link to="item3">Item 3</Link>
+            <ItemCard itemID={'item4'} model={'test model'} image={fast} />
         </div>
     );
 }
