@@ -4,14 +4,13 @@ import './style/App.css';
 
 function App() {
     const activeStyle = {
-        color: 'red',
-        borderBottom: 'solid 2px red',
+        borderBottom: 'solid 2px turquoise',
     };
 
     return (
         <div className="App">
             <header>
-                <h1>Hello from App</h1>
+                <h1>SneakerShop</h1>
                 <nav>
                     <NavLink
                         to="/"
