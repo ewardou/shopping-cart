@@ -1,0 +1,40 @@
+.shop {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    min-height: 90vh;
+}
+
+.shop > div:nth-of-type(2) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+}
+.shop aside {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    position: sticky;
+    top: 80px;
+    height: min-content;
+}
+.shop aside > button {
+    font-size: 1.2rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: background-color 180ms ease-in;
+}
+
+.shop aside > button:hover {
+    background-color: turquoise;
+}
+
+.shop aside > p {
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.shop > div:first-of-type {
+    background-color: lightgray;
+}
