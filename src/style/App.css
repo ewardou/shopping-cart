@@ -17,6 +17,7 @@ header {
     position: sticky;
     top: 0;
     color: white;
+    z-index: 1;
 }
 
 header h1 {

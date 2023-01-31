@@ -27,6 +27,7 @@ export function Shop() {
                 price={item.price}
                 image={item.image}
                 key={item.itemID}
+                secondImage={item.secondImage}
             />
         );
     });
