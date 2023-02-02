@@ -38,7 +38,7 @@ nav > *:hover {
     color: black;
 }
 
-nav img {
+nav > span > img {
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(248deg)
         brightness(106%) contrast(106%);
     height: 30px;

@@ -6,10 +6,17 @@ import { useState } from 'react';
 
 function App() {
     const [cartItems, setCartItems] = useState([]);
+    const [totalItems, setTotalItems] = useState(0);
 
     function addItemToCart(itemID) {
         if (cartItems.includes(itemID)) return;
         setCartItems((prev) => [...prev, itemID]);
+        setTotalItems((prev) => prev + 1);
+    }
+
+    function removeItem(itemID) {
+        setCartItems((prev) => prev.filter((item) => item !== itemID));
+        setTotalItems((prev) => prev - 1);
     }
 
     const activeStyle = {
@@ -37,7 +44,12 @@ function App() {
                     >
                         Shop
                     </NavLink>
-                    <Cart cartItems={cartItems} />
+                    <Cart
+                        cartItems={cartItems}
+                        removeItem={removeItem}
+                        totalItems={totalItems}
+                        setTotalItems={setTotalItems}
+                    />
                 </nav>
             </header>
             <div>
