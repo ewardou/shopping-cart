@@ -1,8 +1,17 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import './style/App.css';
+import Cart from './components/Cart';
+import { useState } from 'react';
 
 function App() {
+    const [cartItems, setCartItems] = useState([]);
+
+    function addItemToCart(itemID) {
+        if (cartItems.includes(itemID)) return;
+        setCartItems((prev) => [...prev, itemID]);
+    }
+
     const activeStyle = {
         borderBottom: 'solid 2px turquoise',
     };
@@ -28,10 +37,11 @@ function App() {
                     >
                         Shop
                     </NavLink>
+                    <Cart cartItems={cartItems} />
                 </nav>
             </header>
             <div>
-                <Outlet />
+                <Outlet context={addItemToCart} />
             </div>
         </div>
     );

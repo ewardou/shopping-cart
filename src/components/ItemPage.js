@@ -1,7 +1,6 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link, useOutletContext } from 'react-router-dom';
 import '../style/ItemPage.css';
-import { Link } from 'react-router-dom';
 import { info } from '../shoesInfo';
 import { useState } from 'react';
 
@@ -18,6 +17,7 @@ function Gallery({ item, onClick }) {
 
 export default function ItemPage() {
     const { itemID } = useParams();
+    const addItemToCart = useOutletContext();
     const [item] = info.filter((item) => {
         return item.itemID === itemID;
     });
@@ -53,7 +53,9 @@ export default function ItemPage() {
                         <option>12.5</option>
                     </select>
                 </p>
-                <button>Add to cart</button>
+                <button onClick={() => addItemToCart(itemID)}>
+                    Add to cart
+                </button>
             </div>
         </div>
     );
