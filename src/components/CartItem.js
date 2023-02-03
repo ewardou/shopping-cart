@@ -2,7 +2,6 @@ import React from 'react';
 import { info } from '../shoesInfo.js';
 import '../style/CartItem.css';
 import { useState, useEffect } from 'react';
-// import forceUp
 
 function Quantity({ removeItem, item, setTotalItems }) {
     const [quantity, setQuantity] = useState(1);
@@ -20,7 +19,8 @@ function Quantity({ removeItem, item, setTotalItems }) {
     }, [quantity]);
 
     return (
-        <div>
+        <div className="quantity">
+            <span>Qty.</span>
             <button onClick={decrease}>-</button>
             <span>{quantity}</span>
             <button onClick={increase}>+</button>

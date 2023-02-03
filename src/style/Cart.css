@@ -66,3 +66,7 @@ div.cart-background {
 div.cart-background.visible {
     left: 0;
 }
+
+.cart button {
+    cursor: pointer;
+}

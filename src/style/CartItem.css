@@ -4,8 +4,30 @@
     display: flex;
     font-size: 1rem;
     align-items: center;
+    border-bottom: solid 1px black;
 }
 
 .card-item > img {
     height: 100%;
+}
+
+.quantity button {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    border: none;
+    font-size: 1rem;
+    height: 22px;
+    width: 22px;
+}
+
+.quantity span:nth-of-type(2) {
+    padding: 3px;
+    margin: 0 5px;
+    border: 1px solid black;
+}
+
+.quantity button:hover {
+    background-color: gray;
 }
