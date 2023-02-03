@@ -1,4 +1,4 @@
-.cart > div {
+.cart > div:first-of-type {
     position: absolute;
     background-color: white;
     color: black;
@@ -6,22 +6,63 @@
     top: 0;
     height: 100vh;
     display: flex;
-    padding: 10px;
     flex-direction: column;
-    width: 35%;
-    transition: right 600ms ease-in-out;
+    align-items: center;
+    transform: scale(0);
+    padding: 10px;
+    width: 30%;
+    transition: right 600ms ease-in-out, transform 600ms ease-in;
+    z-index: 2;
 }
 
-.cart > div.visible {
+.cart > div.visible:first-of-type {
     right: 0;
+    transform: scale(1);
+    transition: right 600ms ease-in-out, transform 100ms ease-in;
 }
 
-.cart > span,
-.cart > img {
+.cart-icon > span,
+.cart-icon > img {
     pointer-events: none;
 }
 
+.cart-icon > img {
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(248deg)
+        brightness(106%) contrast(106%);
+    height: 30px;
+    position: relative;
+    top: 5px;
+    transition: filter 300ms ease-in;
+}
+
+.cart-icon:hover > * {
+    filter: none;
+}
 .cart-items-container {
     overflow: auto;
     flex: 1;
+}
+
+.cart > div > button {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    padding: 3px 6px;
+    border: none;
+}
+
+div.cart-background {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: -110vw;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    pointer-events: all;
+    transition: left 500ms ease-in;
+}
+
+div.cart-background.visible {
+    left: 0;
 }

@@ -4,7 +4,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* font-family: 'Poppins', sans-serif; */
     font-family: 'Roboto Mono', monospace;
 }
 
@@ -36,20 +35,4 @@ nav > * {
 nav > *:hover {
     background-color: turquoise;
     color: black;
-}
-
-nav > span > img {
-    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(248deg)
-        brightness(106%) contrast(106%);
-    height: 30px;
-    position: relative;
-    top: 5px;
-}
-
-nav img:hover {
-    filter: none;
-}
-
-.App {
-    overflow: hidden;
 }

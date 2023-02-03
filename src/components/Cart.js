@@ -3,6 +3,7 @@ import cart from '../images/icons/cart.svg';
 import '../style/Cart.css';
 import { CartItem } from './CartItem';
 import { Total } from './Total';
+import { useState } from 'react';
 
 export default function Cart({
     cartItems,
@@ -10,15 +11,16 @@ export default function Cart({
     totalItems,
     setTotalItems,
 }) {
-    function showCart(e) {
-        console.log(e.target.childNodes);
-        const [, , div] = e.target.childNodes;
-        div.classList.toggle('visible');
+    const [visible, setVisible] = useState('');
+
+    function showCart() {
+        document.body.setAttribute('style', 'overflow:hidden');
+        setVisible('visible');
     }
 
-    function closeCart(e) {
-        const div = e.target.parentNode;
-        div.classList.toggle('visible');
+    function closeCart() {
+        document.body.removeAttribute('style');
+        setVisible('');
     }
 
     function checkout() {
@@ -34,10 +36,12 @@ export default function Cart({
         />
     ));
     return (
-        <span className="cart" onClick={showCart}>
-            <span>{cartItems.length}</span>
-            <img src={cart} alt={'Shopping cart'} />
-            <div>
+        <span className="cart">
+            <span className="cart-icon" onClick={showCart}>
+                <span>{cartItems.length}</span>
+                <img src={cart} alt={'Shopping cart'} />
+            </span>
+            <div className={visible}>
                 <button onClick={closeCart}>x</button>
                 <div className="cart-items-container">
                     {cartItems.length !== 0 ? array : 'No items added yet'}
@@ -45,6 +49,10 @@ export default function Cart({
                 <Total cartItems={cartItems} totalItems={totalItems} />
                 <button onClick={checkout}>Proceed to checkout</button>
             </div>
+            <div
+                className={`cart-background ${visible}`}
+                onClick={closeCart}
+            ></div>
         </span>
     );
 }
