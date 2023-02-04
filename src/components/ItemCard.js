@@ -14,10 +14,15 @@ export default function ItemCard(props) {
             className="card"
             onMouseEnter={modifyImage}
             onMouseLeave={modifyImage}
+            data-testid="container"
         >
             <Link to={`${props.itemID}`}>
                 <div>
-                    <img src={props.image} alt={props.model} />
+                    <img
+                        src={props.image}
+                        alt={props.model}
+                        data-testid="image1"
+                    />
                     <img
                         src={props.secondImage}
                         alt={props.model}
