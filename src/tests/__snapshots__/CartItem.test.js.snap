@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders component correctly 1`] = `
+<div>
+  <div
+    class="card-item"
+  >
+    <img
+      alt="Adidas D.O.N Issue 3"
+      src="ADIDASDON.webp"
+    />
+    <div>
+      <p>
+        Adidas D.O.N Issue 3
+      </p>
+      <p>
+        $
+        75.99
+      </p>
+      <div
+        class="quantity"
+      >
+        <span>
+          Qty.
+        </span>
+        <button>
+          -
+        </button>
+        <span>
+          1
+        </span>
+        <button>
+          +
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
