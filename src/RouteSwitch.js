@@ -7,7 +7,7 @@ import App from './App';
 
 export const RouteSwitch = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/shopping-cart">
             <Routes>
                 <Route path="/" element={<App />}>
                     <Route path="" element={<Home />} />
